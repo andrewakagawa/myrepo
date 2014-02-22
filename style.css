@@ -1,0 +1,102 @@
+        body {
+         padding-top: 0px;
+         width: 1200px;
+         padding-bottom: 40px;
+	 font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        }
+       .linediv-l {
+         border-right: 1px white solid;
+        }
+       .linediv-r {
+         border-left: 1px white solid;
+         padding-left: 5px;
+       }
+
+
+   
+
+
+      .heading, .subheading {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        text-align: center;
+      }
+      
+      .navbar{
+      	min-height:0px !important;
+      	
+      }
+      
+
+      
+	.container{
+	min-width: 1200px !important;
+	}
+
+	.actions {
+	background-color: #343434;
+	padding: 3% 0%;
+	}
+      p.lead {
+        padding-top: 15px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      .pitch {
+	padding: 2.5% 0%;
+	}
+	
+	.order {
+	padding: 2% 0%;
+	}
+
+
+      .video, .thermometer, .order, .social {
+        text-align: center;
+      }
+      .video {
+        /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
+        line-height: 124px;
+      } 
+      
+      div.row {
+        border: 1px solid;
+      }
+
+      .jumbotron {
+	text-align: center;
+	}
+	.jumbotron h1 {
+	font-size: 100px;
+	line-height: 1;
+	}
+	.jumbotron .lead {
+	font-size: 24px;
+	line-height: 1.25;
+	}
+      .statistics {
+        color: white;
+      }
+
+      /* Marketing Copy and Footer */
+      .copy {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        text-align: justify;
+      }
+      .asset {
+        padding: 2.5% 0%;
+      }
+      .footer {
+        color: #cccccc;
+        text-align: center;
+      }
+      .footer p {
+        font-size: 11px;
+      }
+      .footer a {
+        color: #ccccff;
+      }
+
