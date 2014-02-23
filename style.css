@@ -108,15 +108,12 @@
      }
      
      .carousel-caption {
-position: none; 
-left: inherit;
-right: inherit;
-bottom: inherit;
-z-index: 10;
-/* padding-top: 20px; */
-/* padding-bottom: 20px; */
-color: #FFF;
-text-align: center;
-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-}
+	position: relative !important;
+	left: inherit !important;
+	right: inherit !important;
+	bottom: inherit !important;
+	z-index: 10;
+	padding-top: inherit !important;
+	padding-bottom: inherit !important;
+	}
 
