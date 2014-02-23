@@ -27,7 +27,12 @@ body {
 
 .navbar-right li {padding:0 1rem;}
       	
-      
+.data-tabs-main li {
+  margin:1rem;
+  font-size:1.3rem;
+  float:right;
+  font-weight:500;
+}
 
 img.logo {
   height:50px;
