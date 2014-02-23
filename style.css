@@ -32,7 +32,15 @@ body {
 img.logo {
   height:50px;
 }
-      
+   
+
+.carousel-control.left {
+  left:-30px;
+}   
+
+.carousel-control.right {
+  right:-60px!important;
+}
 	.container{
 	min-width: 1200px !important;
 	padding-top: 50px;
