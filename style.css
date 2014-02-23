@@ -17,17 +17,23 @@ body {
       
       .navbar{
       	min-height:0px !important;
+        font-weight:700;
       }
        
        .navbar-right {
         width:auto;
-        padding-right:5em;
-       }      
+        padding:1rem 5rem 0 0;
+       }     
 
+.navbar-right li {padding:0 1rem;}
+
+img.logo {
+  height:50px;
+}
       
 	.container{
 	min-width: 1200px !important;
-	padding-top: 30px;
+	padding-top: 50px;
 
 	}
 
@@ -63,7 +69,11 @@ body {
     border: none !important;
     box-shadow: none !important;
 }
-
+.dropdown-menu:before, 
+.dropdown-menu:after {
+     border: none !important;
+     content: none !important;
+}
 
 .intro {
   width:960px;
