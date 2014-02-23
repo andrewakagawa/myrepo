@@ -38,6 +38,10 @@
         font-size: 18px;
         line-height: 24px;
       }
+      
+      .tab-content{
+      	overflow:hidden !important;
+      }
 
       .pitch {
 	padding: 2.5% 0%;
