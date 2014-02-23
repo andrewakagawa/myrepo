@@ -230,7 +230,7 @@
         chart2.draw(data2, options2);      
 
         function selectHandler() {
-          var selectedItem = chart.getSelection()[0];
+          var selectedItem = chart2.getSelection()[0];
           if (selectedItem) {
             var topping = data2.getValue(selectedItem.row, 0);
             window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
@@ -242,7 +242,7 @@
         chart3.draw(data3, options3);   
  
         function selectHandler() {
-          var selectedItem = chart.getSelection()[0];
+          var selectedItem = chart3.getSelection()[0];
           if (selectedItem) {
             var topping = data3.getValue(selectedItem.row, 0);
             window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
