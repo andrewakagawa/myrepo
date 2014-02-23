@@ -37,7 +37,7 @@
 	// Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Condition');
-        data.addColumn('number', 'Percentage');
+        data.addColumn('number', 'Rate');
         data.addRows([
 	['Anza-Borrego Springs',	792.8],
 	['La Mesa',	631.8],
@@ -86,7 +86,7 @@
 	// Create the data2 table.
         var data2 = new google.visualization.DataTable();
         data2.addColumn('string', 'Condition');
-        data2.addColumn('number', 'Percentage');
+        data2.addColumn('number', 'Rate');
         data2.addRows([
           ['CHD', 38.4],
           ['Stroke', 24.7],
@@ -98,7 +98,7 @@
 	// Create the data3 table.
         var data3 = new google.visualization.DataTable();
         data3.addColumn('string', 'Condition');
-        data3.addColumn('number', 'Percentage');
+        data3.addColumn('number', 'Rate');
         data3.addRows([
           ['COPD', 40.5],
           ['Asthma', 35.3],
@@ -218,11 +218,12 @@
 	  </ul>
 	
 	  <div class="tab-content">
-	   <div class="main-pareto">
+
 	    <div class="tab-pane active" id="item1">
- 	      <!--Div that will hold the chart-->       
-              <div id="chart_div"></div>
-             </div> 
+	      <div class="main-pareto">	    
+ 	        <!--Div that will hold the chart-->       
+                <div id="chart_div"></div>
+              </div> 
 	    </div>
 	    <div class="tab-pane" id="item2">
  	      <!--Div that will hold the chart-->       
