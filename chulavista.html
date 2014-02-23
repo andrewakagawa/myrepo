@@ -27,13 +27,13 @@
 
 	// Set a callback to run when the Google Visualization API is loaded.
 	google.setOnLoadCallback(drawChart);
-	
-	
+
+
 	// Callback that creates and populates a data table,
         // instantiates the pie chart, passes in the data and
         // draws it.
         function drawChart() {
-	
+
 	// Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Condition');
@@ -181,7 +181,6 @@
               <li><a href="#">El Cajon</a></li>
               <li><a href="#">Elliott-Navajo</a></li>
               <li><a href="#">Escondido</a></li>
-
             </ul>
           </div>
           <div class="span3">
@@ -238,8 +237,59 @@
 </ul>
   </div>
       </div>  </div>
-
-
+            </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+             <li><a href="#">Fallbrook</a></li>
+              <li><a href="#">Harbison-Crest/El Cajon</a></li>
+              <li><a href="#">Jamul</a></li>
+              <li><a href="#">Kearny Mesa</a></li>
+              <li><a href="#">La Mesa</a></li>
+              <li><a href="#">Laguna-Pine Valley</a></li>
+              <li><a href="#">Lakeside</a></li>
+              <li><a href="#">Lemon Grove</a></li>
+              <li><a href="#">Mid-City</a></li>
+              <li><a href="#">Miramar</a></li>
+            </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">Mountain Empire</a></li>
+              <li><a href="#">National City</a></li>
+              <li><a href="#">North SD</a></li>
+              <li><a href="#">Oceanside</a></li>
+              <li><a href="#">Palomar-Julian</a></li>
+              <li><a href="#">Pauma</a></li>
+              <li><a href="#">Pendleton</a></li>
+              <li><a href="#">Peninsula</a></li>
+              <li><a href="#">Poway</a></li>
+              <li><a href="#">Ramona</a></li>
+          </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">San Dieguito</a></li>
+              <li><a href="#">San Marcos</a></li>
+              <li><a href="#">Santee</a></li>
+              <li><a href="#">South Bay</a></li>
+              <li><a href="#">Southeast SD</a></li>
+              <li><a href="#">Spring Valley</a></li>
+              <li><a href="#">Sweetwater</a></li>
+              <li><a href="#">University</a></li>
+              <li><a href="#">Valley Center</a></li>
+              <li><a href="#">Vista</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  
+ </ul>
+</ul>
+  </div>
+      </div>  </div>
 
 <div class="container">
   <h1>Chula Vista Health Stats</h1>
@@ -250,9 +300,17 @@
             <iframe width="800" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://dianaeg2014.maps.arcgis.com/home/webmap/templates/OnePane/basicviewer/embed.html?webmap=943a54276f964eb5abd3a92cf8af50c2&amp;gcsextent=-117.4808,32.4762,-116.6376,32.8421&amp;displayslider=true&amp;displayscalebar=true&amp;displaylegend=true&amp;displaydetails=true&amp;displaybasemaps=true"></iframe>
           </div>
 	 <div class="span4 actions">
+	 <div class="span5 actions offset1">
 
 	   <div class="span10 offset1">
              <div class="statistics">
+             
+             <div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+  <div class="carousel-inner">
+    <div class="item active"><!-- class of active since it's the first item -->
+
+      <div class="carousel-caption">
+      
               <div class="span11">
                   <h2>Overall Score Card</h2>
               </div>
@@ -268,14 +326,35 @@
               <div class="span11">
                 <h3>Emergency Room Visits</h3> <p>42 of 42</p>
               </div>
+
+      </div>
+    </div>
+    <div class="item">
+
+      <div class="carousel-caption">
+        <h3>Health Score Card</h3>
+        <p>40 of 42 Excercise at home (25.6%)</p>
+        <p>36 of 42 Presently controlling diet (36.2%)</p>
+        <p>36 of 42 Current Smokers (11.0%)</p>
+        <p>14 of 42 Overweight/Obese (65.6%)</p>
+        <p>22 of 42 Ate Fast Food 3+ Times per Week (18.9%)</p>
+        <p>35 of 42 Eats 5+ Servings of Fruits & Vegetables - Ages 2-11 (49.5%)</p>
+        <p>16 of 42 Physically Active 5+ Days for at least 1 Hour - Ages 5-11 (42.0%)</p>
+      </div>
+    </div>
+
+  </div><!-- /.carousel-inner -->
+  <!--  Next and Previous controls below
+        href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+</div><!-- /.carousel -->
+
+            
             </div>
           </div>
         </div>
       </div>
-
-
-
-
     <div class="row-fluid">
 
 
@@ -288,7 +367,7 @@
 	    <li><a href="#item2" data-toggle="tab">Hospitalizations</a></li>
     	    <li><a href="#item3" data-toggle="tab">Emergency</a></li>
 	  </ul>
-	
+
 	  <div class="tab-content">
 	    <div class="tab-pane active" id="item1">
  	      <!--Div that will hold the chart-->       
@@ -320,7 +399,7 @@
 	      <li><a href="#item5" data-toggle="tab">Hospitalizations</a></li>
     	      <li><a href="#item6" data-toggle="tab">Emergency</a></li>
 	    </ul>
-	    
+
 	    <div class="tab-content">
 	      <div class="tab-pane active" id="item4">
  	        <!--Div that will hold the chart-->       
@@ -335,7 +414,7 @@
                 <div id="chart_div6" style="width: 480px; height: 300px;"></div>	  	
 	      </div>
 	    </div>
-	  
+
           </div>        
         </div>
       </div>
@@ -377,5 +456,5 @@ Website: <a href="https://vargas.house.gov/">https://vargas.house.gov/</a>
     </div></div>
 
 </body>
-	
+
 </html>
