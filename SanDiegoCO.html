@@ -183,22 +183,11 @@
         ]);   
         
         var data4 = google.visualization.arrayToDataTable([
-          ['Year', 'CHD', 'Stroke', 'Asthma', 'COPD', 'Diabetes', 'Cancer'],
-          ['2010',  188.3,  49.5,  0.0,  52.9,  43.4,  246.5],
-          ['2011',  190.7,  40.5,  0.0,  52.6,  38.0,  242.4]
+          ['Year', 'Death Rate', 'Hospital Rate', 'Emergency Rate'],
+          ['2010',    347.0,  864.9,  782.8],
+          ['2011',  347.0,  812.8,  802.4]
         ]);
 
-        var data5 = google.visualization.arrayToDataTable([
-          ['Year', 'CHD', 'Stroke', 'Asthma', 'COPD', 'Diabetes'],
-          ['2010',  657.8,  407.9,  92.9,  184.8,  271.6],
-          ['2011',  535.7,  345.1,  90.6,  170.8,  253.6]
-        ]);
-
-        var data6 = google.visualization.arrayToDataTable([
-          ['Year', 'CHD', 'Stroke', 'Asthma', 'COPD', 'Diabetes'],
-          ['2010',  49.5,  93.7,  720.3,  708.1,  282.0],
-          ['2011',  64.7,  115.6,  647.0,  742.8,  263.1]
-        ]);
 
         // Set chart options
         var options = {'width':1200,
@@ -219,43 +208,63 @@
                        };
                        
         // Set chart options4
-        var options4 = {'width':480,
-                       'height':300
+        var options4 = {'width':1200,
+                       'height':400
                        };
                        
-        // Set chart options4
-        var options5 = {'width':480,
-                       'height':300
-                       };
-                       
-        // Set chart options4
-        var options6 = {'width':480,
-                       'height':300
-                       };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
         
+        function selectHandler() {
+          var selectedItem = chart.getSelection()[0];
+          if (selectedItem) {
+            var topping = data.getValue(selectedItem.row, 0);
+            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+          }
+        }
+        
+        google.visualization.events.addListener(chart, 'select', selectHandler);    
+          chart.draw(data, options);
+        }
+        
         // Instantiate and draw our chart, passing in some options.
         var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
         chart2.draw(data2, options2);      
 
+        function selectHandler() {
+          var selectedItem = chart2.getSelection()[0];
+          if (selectedItem) {
+            var topping = data2.getValue(selectedItem.row, 0);
+            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+          }
+        }
+        
+        google.visualization.events.addListener(chart2, 'select', selectHandler);    
+          chart2.draw(data2, options2);
+        }
+
         // Instantiate and draw our chart, passing in some options.
         var chart3 = new google.visualization.BarChart(document.getElementById('chart_div3'));
         chart3.draw(data3, options3);   
+ 
+        function selectHandler() {
+          var selectedItem = chart3.getSelection()[0];
+          if (selectedItem) {
+            var topping = data3.getValue(selectedItem.row, 0);
+            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+          }
+        }
         
+        google.visualization.events.addListener(chart3, 'select', selectHandler);    
+          chart3.draw(data3, options3);
+        }
+ 
         // Instantiate and draw our chart, passing in some options.      
         var chart4 = new google.visualization.LineChart(document.getElementById('chart_div4'));
         chart4.draw(data4, options4);
 
-        // Instantiate and draw our chart, passing in some options.      
-        var chart5 = new google.visualization.LineChart(document.getElementById('chart_div5'));
-        chart5.draw(data5, options5);
-
-        // Instantiate and draw our chart, passing in some options.      
-        var chart6 = new google.visualization.LineChart(document.getElementById('chart_div6'));
-        chart6.draw(data6, options6);
       }
     </script>
 
@@ -281,11 +290,11 @@
 	</div>
 
       
-  <h1>San Diego County Pareto</h1>
+
 
 
    <div class="row-fluid">
-
+       <h1>San Diego County Pareto</h1>
           <ul class="nav nav-tabs">
   	    <li><a href="#item1" data-toggle="tab">Deaths</a></li>
 	    <li><a href="#item2" data-toggle="tab">Hospitalizations</a></li>
@@ -317,37 +326,9 @@
     </div>
 
       <div class="row-fluid">
-        <div class="span12">      
-          <div class="span5">
-            <a href="#"><img class="img-polaroid" src="http://placehold.it/480x418"></a>
-          </div>
-        
-          <div class="span5 offset1">
-            <h2>Trends</h2>
-        
-            <ul class="nav nav-tabs">
-  	      <li><a href="#item4" data-toggle="tab">Deaths</a></li>
-	      <li><a href="#item5" data-toggle="tab">Hospitalizations</a></li>
-    	      <li><a href="#item6" data-toggle="tab">Emergency</a></li>
-	    </ul>
-	    
-	    <div class="tab-content">
-	      <div class="tab-pane active" id="item4">
- 	        <!--Div that will hold the chart-->       
-                <div id="chart_div4" style="width: 480px; height: 300px;"></div>	  	
-	      </div>
-	      <div class="tab-pane" id="item5">
- 	        <!--Div that will hold the chart-->       
-                <div id="chart_div5" style="width: 480px; height: 300px;"></div>	  	
-	      </div>
-	      <div class="tab-pane" id="item6">
- 	        <!--Div that will hold the chart-->       
-                <div id="chart_div6" style="width: 480px; height: 300px;"></div>	  	
-	      </div>
-	    </div>
-	  
-          </div>        
-        </div>
+  	<h1>San Diego County Trend</h1>      
+       	        <!--Div that will hold the chart-->       
+                <div id="chart_div4" style="width: 480px; height: 300px;"></div>
       </div>
 
 </body>
