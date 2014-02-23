@@ -100,12 +100,23 @@ img.logo {
   font-size:1rem;
 }
 
+h1, h2 {
+  color:#005555!important;
+}
+
+.actions {
+  background-color: #666;
+}
+.statistics h2 {
+  color:#fff!important;
+}
+
 .bkgdlead {
   letter-spacing: 6px;
   color:#E6E6E6;
   font-size:15rem;
   font-weight:700;
-  margin-top:7rem;
+  margin:7rem 0 -3rem;
 }
 
 .col-lg-4 p {
