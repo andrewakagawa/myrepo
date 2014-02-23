@@ -228,16 +228,40 @@
         google.visualization.events.addListener(chart, 'select', selectHandler);    
          chart.draw(data, options);
 
+
         
         // Instantiate and draw our chart, passing in some options.
         var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
         chart2.draw(data2, options2);      
         
+        function selectHandler() {
+          var selectedItem = chart2.getSelection()[0];
+          if (selectedItem) {
+            var topping = data2.getValue(selectedItem.row, 0);
+            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+          }
+        }
+        
+        google.visualization.events.addListener(chart2, 'select', selectHandler);    
+         chart.draw(data2, options2);
+
+
 
         // Instantiate and draw our chart, passing in some options.
         var chart3 = new google.visualization.BarChart(document.getElementById('chart_div3'));
         chart3.draw(data3, options3);   
         
+        function selectHandler() {
+          var selectedItem = chart3.getSelection()[0];
+          if (selectedItem) {
+            var topping = data3.getValue(selectedItem.row, 0);
+            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+          }
+        }
+        
+        google.visualization.events.addListener(chart3, 'select', selectHandler);    
+         chart.draw(data3, options3);        
+ 
  
         // Instantiate and draw our chart, passing in some options.      
         var chart4 = new google.visualization.LineChart(document.getElementById('chart_div4'));
