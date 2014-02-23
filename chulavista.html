@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
-    <title>Chula Vista</title>
+    <title>Chula Vista | Live Well San Diego</title>
     
     <!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,20 +27,20 @@
 
 	// Set a callback to run when the Google Visualization API is loaded.
 	google.setOnLoadCallback(drawChart);
-	
-	
+
+
 	// Callback that creates and populates a data table,
         // instantiates the pie chart, passes in the data and
         // draws it.
         function drawChart() {
-	
+
 	// Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Condition');
         data.addColumn('number', 'Percentage');
         data.addRows([
           ['Cancer', 43.0],
-          ['CHD', 33.8],
+          ['Heart Disease', 33.8],
           ['COPD', 9.3],
           ['Stroke', 7.2],
           ['Diabetes', 6.7],
@@ -52,7 +52,7 @@
         data2.addColumn('string', 'Condition');
         data2.addColumn('number', 'Percentage');
         data2.addRows([
-          ['CHD', 38.4],
+          ['Heart Disease', 38.4],
           ['Stroke', 24.7],
           ['Diabetes', 18.2],
           ['COPD', 12.2],
@@ -68,57 +68,57 @@
           ['Asthma', 35.3],
           ['Diabetes', 14.4],
           ['Stroke', 6.3],
-          ['CHD', 3.5]
+          ['Heart disease', 3.5]
         ]);   
         
         var data4 = google.visualization.arrayToDataTable([
-          ['Year', 'CHD', 'Stroke', 'Asthma', 'COPD', 'Diabetes', 'Cancer'],
+          ['Year', 'Heart disease', 'Stroke', 'Asthma', 'COPD', 'Diabetes', 'Cancer'],
           ['2010',  188.3,  49.5,  0.0,  52.9,  43.4,  246.5],
           ['2011',  190.7,  40.5,  0.0,  52.6,  38.0,  242.4]
         ]);
 
         var data5 = google.visualization.arrayToDataTable([
-          ['Year', 'CHD', 'Stroke', 'Asthma', 'COPD', 'Diabetes'],
+          ['Year', 'Heart disease', 'Stroke', 'Asthma', 'COPD', 'Diabetes'],
           ['2010',  657.8,  407.9,  92.9,  184.8,  271.6],
           ['2011',  535.7,  345.1,  90.6,  170.8,  253.6]
         ]);
 
         var data6 = google.visualization.arrayToDataTable([
-          ['Year', 'CHD', 'Stroke', 'Asthma', 'COPD', 'Diabetes'],
+          ['Year', 'Heart disease', 'Stroke', 'Asthma', 'COPD', 'Diabetes'],
           ['2010',  49.5,  93.7,  720.3,  708.1,  282.0],
           ['2011',  64.7,  115.6,  647.0,  742.8,  263.1]
         ]);
 
         // Set chart options
-        var options = {'width':650,
+        var options = {'width':850,
                        'height':275,
                        legend: { position: "none" },
                        };
                        
         // Set chart options2
-        var options2 = {'width':650,
+        var options2 = {'width':850,
                        'height':275,
                        legend: { position: "none" },
                        };
 
         // Set chart options3
-        var options3 = {'width':650,
+        var options3 = {'width':850,
                        'height':275,
                        legend: { position: "none" },
                        };
                        
         // Set chart options4
-        var options4 = {'width':480,
+        var options4 = {'width':850,
                        'height':300
                        };
                        
         // Set chart options4
-        var options5 = {'width':480,
+        var options5 = {'width':850,
                        'height':300
                        };
                        
         // Set chart options4
-        var options6 = {'width':480,
+        var options6 = {'width':850,
                        'height':300
                        };
 
@@ -156,29 +156,105 @@
 
 <div class="navbar-wrapper">
       <div class="container">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul class="nav">
+      <li>
+        <a href="index.html"><img class="logo" src="LWSD_CMYK_BT_H.png" /></a>
+      </li>
+  </ul>
+    <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Explore your region's health</a>
+    <div class="dropdown-menu multi-column">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">Alpine</a></li>
+              <li><a href="#">Anza-Borrego Springs</a></li>
+              <li><a href="#">Carlsbad</a></li>
+              <li><a href="#">Central SD</a></li>
+              <li><a href="chulavista.html">Chula Vista</a></li>
+              <li><a href="#">Coastal</a></li>
+              <li><a href="#">Coronado</a></li>
+              <li><a href="#">Del Mar-Mira Mesa</a></li>
+              <li><a href="#">El Cajon</a></li>
+              <li><a href="#">Elliott-Navajo</a></li>
+              <li><a href="#">Escondido</a></li>
+
+            </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+             <li><a href="#">Fallbrook</a></li>
+              <li><a href="#">Harbison-Crest/El Cajon</a></li>
+              <li><a href="#">Jamul</a></li>
+              <li><a href="#">Kearny Mesa</a></li>
+              <li><a href="#">La Mesa</a></li>
+              <li><a href="#">Laguna-Pine Valley</a></li>
+              <li><a href="#">Lakeside</a></li>
+              <li><a href="#">Lemon Grove</a></li>
+              <li><a href="#">Mid-City</a></li>
+              <li><a href="#">Miramar</a></li>
+            </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">Mountain Empire</a></li>
+              <li><a href="#">National City</a></li>
+              <li><a href="#">North SD</a></li>
+              <li><a href="#">Oceanside</a></li>
+              <li><a href="#">Palomar-Julian</a></li>
+              <li><a href="#">Pauma</a></li>
+              <li><a href="#">Pendleton</a></li>
+              <li><a href="#">Peninsula</a></li>
+              <li><a href="#">Poway</a></li>
+              <li><a href="#">Ramona</a></li>
+          </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">San Dieguito</a></li>
+              <li><a href="#">San Marcos</a></li>
+              <li><a href="#">Santee</a></li>
+              <li><a href="#">South Bay</a></li>
+              <li><a href="#">Southeast SD</a></li>
+              <li><a href="#">Spring Valley</a></li>
+              <li><a href="#">Sweetwater</a></li>
+              <li><a href="#">University</a></li>
+              <li><a href="#">Valley Center</a></li>
+              <li><a href="#">Vista</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+            <a href="index.html#map">Map comparisons</a>
+          </li>
+   
+ </ul>
+</ul>
+  </div>
+      </div>  </div>
 
 
-	<div class="navbar navbar-inverse navbar-fixed-top">
-            <ul class="nav">
-		<li>
-          	<a href="index.html"><b>LWSD</b></a>
-        	</li>
-        	<li>
-          	<a href="#">About</a>
-        	</li>
-	   </ul>
-	</div>
 
-      
-  <h1>Chula Vista</h1>
+<div class="container">
+  <h1>Chula Vista Health Stats</h1>
 
 
    <div class="row-fluid">
-	 <div class="span4 actions">
+        <div class="span5">
+            <a href="#"><img class="img-polaroid" src="http://placehold.it/480x418"></a>
+          </div>
+	 <div class="span5 actions offset1">
+
 	   <div class="span10 offset1">
              <div class="statistics">
               <div class="span11">
-                  <h2>Overall Regional Score Card</h2>
+                  <h2>Overall Score Card</h2>
               </div>
               <div class="span11">
                 <!-- linediv-l and linediv-r give dividing lines that look
@@ -190,22 +266,29 @@
                   <h3>Hospitalizations</h3> <p>41 of 42</p>
               </div>
               <div class="span11">
-                <h3>Emergency Room</h3> <p>42 of 42</p>
+                <h3>Emergency Room Visits</h3> <p>42 of 42</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
 
-        <div class="span6 offset1">
-        <h2>Pareto Analysis</h2>
+
+
+    <div class="row-fluid">
+
+
+        <div class="span10 offset1">
+        <h2>What's making Chula Vista unhealthy</h2>
+        <p>In percentages</p>
         
           <ul class="nav nav-tabs">
   	    <li><a href="#item1" data-toggle="tab">Deaths</a></li>
 	    <li><a href="#item2" data-toggle="tab">Hospitalizations</a></li>
     	    <li><a href="#item3" data-toggle="tab">Emergency</a></li>
 	  </ul>
-	
+
 	  <div class="tab-content">
 	    <div class="tab-pane active" id="item1">
  	      <!--Div that will hold the chart-->       
@@ -223,22 +306,21 @@
 
         </div>
     </div>
+    <p class="caption">COPD = Chronic obstructive pulmonary disease, which includes chronic bronchitis and emphysema.</p>
 
       <div class="row-fluid">
         <div class="span12">      
-          <div class="span5">
-            <a href="#"><img class="img-polaroid" src="http://placehold.it/480x418"></a>
-          </div>
+          
         
-          <div class="span5 offset1">
-            <h2>Trends</h2>
+          <div class="span10 offset1">
+            <h2>How Chula Vista has been doing</h2>
         
             <ul class="nav nav-tabs">
   	      <li><a href="#item4" data-toggle="tab">Deaths</a></li>
 	      <li><a href="#item5" data-toggle="tab">Hospitalizations</a></li>
     	      <li><a href="#item6" data-toggle="tab">Emergency</a></li>
 	    </ul>
-	    
+
 	    <div class="tab-content">
 	      <div class="tab-pane active" id="item4">
  	        <!--Div that will hold the chart-->       
@@ -253,11 +335,47 @@
                 <div id="chart_div6" style="width: 480px; height: 300px;"></div>	  	
 	      </div>
 	    </div>
-	  
+
           </div>        
         </div>
       </div>
+          <p class="caption">COPD = Chronic obstructive pulmonary disease, which includes chronic bronchitis and emphysema.</p>
+
+<div class="row-fluid">
+        <div class="span12">      
+         <div class="span10 offset1">
+            <h2>What you can do</h2>
+            <ul class="list-unstyled list-cta">
+              <li>Get educated
+                <ul><li>Read more about <a href="http://www.cdc.gov/cancer/">cancer</a> and <a href="http://www.cdc.gov/heartdisease/"> heart disease</a></li>
+              </li></ul>
+              <li>Increase your physical activity
+                <ul><li>Take more <a href="http://www.sdmts.com/tripplanner.asp">public transportation</a></li>
+                  <li>Find a nearby <a href="http://www.chulavistaca.gov/City_Services/Community_Services/Public_Works_Operations/Parks/default.asp">park</a> or <a href="http://www.yelp.com/search?cflt=gyms&find_loc=Chula+Vista%2C+San+Diego%2C+CA">gym</a></li>
+                  <li>Join a <a href="http://www.meetup.com/find/events/fitness/?radius=50&userFreeform=Chula+Vista%2C+California%2C+USA&mcId=c91909&eventFilter=mysugg">physical activity group on Meetup.com</a></li>
+                </ul></li>
+              <li>Improve your diet
+                <ul><li>Look up your closest <a href="http://www.yelp.com/search?cflt=grocery&find_loc=Chula+Vista%2C+CA">supermarket</a> or <a href="http://www.ci.chula-vista.ca.us/Events/downtownFarmersMarket.asp">farmer's market</a></li></li></ul>
+                </li>
+
+
+                <!--insert sponsored logos here-->
+              <li>Become an activist
+                <ul><li>Petition your local representative to support more healthy initiatives</li>
+                  <address><strong>Congressman Juan Vargas</strong><br/>
+                    333 F Street, Suite A<br/>
+Chula Vista, CA 91910<br/>
+Phone: 619-422-5963<br/>
+Fax: 619-422-7290<br/>
+Website: <a href="https://vargas.house.gov/">https://vargas.house.gov/</a>
+</address>
+
+
+          </li></ul>
+        </div>
+
+    </div></div>
 
 </body>
-	
+
 </html>
