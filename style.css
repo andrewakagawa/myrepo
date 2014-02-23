@@ -99,4 +99,10 @@
       .footer a {
         color: #ccccff;
       }
+      
+      
+     #main-pareto {
+     	height:3000px;
+     	overflow:hidden;
+     }
 
