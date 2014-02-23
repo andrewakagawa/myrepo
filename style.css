@@ -51,6 +51,20 @@ body {
 	padding: 2% 0%;
 	}
 
+
+.dropdown-menu.multi-column {
+    width: 800px;
+}
+
+.dropdown-menu.multi-column .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
 .intro {
   width:960px;
   margin:0 auto;
