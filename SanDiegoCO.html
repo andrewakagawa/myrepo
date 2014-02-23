@@ -220,13 +220,17 @@
         function selectHandler() {
           var selectedItem = chart.getSelection()[0];
           if (selectedItem) {
-            var topping = data.getValue(selectedItem.row, 0);
-            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+            var region = data.getValue(selectedItem.row, 0);
+                 if (region == 'Chula Vista'){ 
+                   window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+                 }
+                 else {
+                   alert('Will provide ' + region + ' data with funding ;)  For now check out the Chula Vista demo by clicking that region')	
+                 }
           }
         }
         
         google.visualization.events.addListener(chart, 'select', selectHandler);    
-         chart.draw(data, options);
 
 
         
@@ -237,13 +241,17 @@
         function selectHandler2() {
           var selectedItem2 = chart2.getSelection()[0];
           if (selectedItem2) {
-            var topping = data2.getValue(selectedItem2.row, 0);
-            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+            	var region = data2.getValue(selectedItem2.row, 0);
+                 if (region == 'Chula Vista'){ 
+                   window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+                 }
+                 else {
+                   alert('Will provide ' + region + ' data with funding ;)  For now check out the Chula Vista demo by clicking that region')	
+                 }
           }
         }
         
         google.visualization.events.addListener(chart2, 'select', selectHandler2);    
-         chart.draw(data2, options2);
 
 
 
@@ -254,14 +262,18 @@
         function selectHandler3() {
           var selectedItem3 = chart3.getSelection()[0];
           if (selectedItem3) {
-            var topping = data3.getValue(selectedItem3.row, 0);
-            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+            	var region = data3.getValue(selectedItem3.row, 0);
+                 if (region == 'Chula Vista'){ 
+                   window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+                 }
+                 else {
+                   alert('Will provide ' + region + ' data with funding ;)  For now check out the Chula Vista demo by clicking that region')	
+                 }
           }
         }
         
         google.visualization.events.addListener(chart3, 'select', selectHandler3);    
-         chart.draw(data3, options3);        
- 
+
  
         // Instantiate and draw our chart, passing in some options.      
         var chart4 = new google.visualization.LineChart(document.getElementById('chart_div4'));
