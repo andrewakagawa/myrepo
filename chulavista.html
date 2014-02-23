@@ -35,18 +35,19 @@
 	
 	// Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Condition');
+        data.addColumn('number', 'Percentage');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['Cancer', 242.4],
+          ['CHD', 190.7],
+          ['COPD', 52.6],
+          ['Stroke', 40.5],
+          ['Diabetes', 38.0],
+          ['Asthma', 0.0]
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'Pareto',
                        'width':570,
                        'height':452};
 
