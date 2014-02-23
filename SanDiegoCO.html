@@ -220,8 +220,13 @@
         function selectHandler() {
           var selectedItem = chart.getSelection()[0];
           if (selectedItem) {
-            var topping = data.getValue(selectedItem.row, 0);
-            window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+            var region = data.getValue(selectedItem.row, 0);
+                 if (region == 'Chula Vista'){ 
+                   window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+                 }
+                 else {
+                   alert('Will provide ' + region + ' data with funding ;)  For now check out Chula Vista @ https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html')	
+                 }
           }
         }
         
