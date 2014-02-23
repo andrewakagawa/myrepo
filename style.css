@@ -100,9 +100,32 @@ img.logo {
   font-size:1rem;
 }
 
+.bkgdlead {
+  letter-spacing: 6px;
+  color:#E6E6E6;
+  font-size:15rem;
+  font-weight:700;
+  margin-top:7rem;
+}
+
+.col-lg-4 p {
+  font-size:0.9rem;
+}
+
 .intro {
   width:960px;
-  margin:0 auto;
+  margin:2rem auto;
+  text-align: center;
+}
+
+.intro p {
+  margin:2rem 0;
+  line-height: 1.8rem;
+}
+
+.btn-cta {
+  margin-top:3rem;
+  font-size:3rem;
 }
       .video, .thermometer, .order, .social {
         text-align: center;
