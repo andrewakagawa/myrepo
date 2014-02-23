@@ -75,6 +75,7 @@
 	}
       .statistics {
         color: white;
+        min-height:370px;
       }
 
       /* Marketing Copy and Footer */
