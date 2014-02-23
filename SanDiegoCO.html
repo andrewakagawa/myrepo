@@ -231,7 +231,6 @@
         }
         
         google.visualization.events.addListener(chart, 'select', selectHandler);    
-         chart.draw(data, options);
 
 
         
@@ -253,7 +252,6 @@
         }
         
         google.visualization.events.addListener(chart2, 'select', selectHandler2);    
-         chart.draw(data2, options2);
 
 
 
@@ -275,8 +273,7 @@
         }
         
         google.visualization.events.addListener(chart3, 'select', selectHandler3);    
-         chart.draw(data3, options3);        
- 
+
  
         // Instantiate and draw our chart, passing in some options.      
         var chart4 = new google.visualization.LineChart(document.getElementById('chart_div4'));
