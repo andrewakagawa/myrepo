@@ -172,6 +172,7 @@ h1, h2 {
 	}
       .statistics {
         color: white;
+        min-height:370px;
       }
 
        /* Marketing Copy and Footer */
