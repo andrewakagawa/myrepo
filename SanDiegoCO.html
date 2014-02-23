@@ -37,20 +37,56 @@
 	// Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Condition');
-        data.addColumn('number', 'Percentage');
+        data.addColumn('number', 'Rate');
         data.addRows([
-          ['Cancer', 43.0],
-          ['CHD', 33.8],
-          ['COPD', 9.3],
-          ['Stroke', 7.2],
-          ['Diabetes', 6.7],
-          ['Asthma', 0.0]
+	['Anza-Borrego Springs',	792.8],
+	['La Mesa',	631.8],
+	['Chula Vista',	564.2],
+	['Harbison Crest/El Cajon**',	539.2],
+	['Fallbrook',	432.4],
+	['Kearny Mesa',	423.9],
+	['National City',	401.8],
+	['Coronado',	390.1],
+	['Coastal',	389.1],
+	['North SD',	387.5],
+	['Jamul',	386.8],
+	['Escondido',	384.2],
+	['Oceanside',	384.1],
+	['Santee',	375.3],
+	['Vista',	375.0],
+	['El Cajon',	372.0],
+	['San Marcos',	371.4],
+	['Mountain Empire',	364.4],
+	['Lemon Grove',	360.6],
+	['Elliott-Navajo',	354.5],
+	['San Diego County',	347.0],
+	['Ramona',	335.8],
+	['Lakeside',	335.3],
+	['Alpine',	329.8],
+	['Carlsbad',	323.7],
+	['South Bay',	321.2],
+	['Southeast SD',	319.7],
+	['San Dieguito',	318.2],
+	['Central SD',	305.5],
+	['Mid-City',	291.1],
+	['Spring Valley',	286.3],
+	['Valley Center',	285.6],
+	['Peninsula',	279.1],
+	['Poway',	250.9],
+	['University',	231.6],
+	['Pauma',	193.0],
+	['Palomar-Julian',	186.7],
+	['Del Mar-Mira Mesa',	186.1],
+	['Sweetwater',	134.7],
+	['Laguna-Pine Valley',	106.3],
+	['Miramar',	0.0],
+	['Pendleton',	0.0]
         ]);
         
 	// Create the data2 table.
         var data2 = new google.visualization.DataTable();
         data2.addColumn('string', 'Condition');
-        data2.addColumn('number', 'Percentage');
+        data2.addColumn('number', 'Rate');
         data2.addRows([
           ['CHD', 38.4],
           ['Stroke', 24.7],
@@ -62,7 +98,7 @@
 	// Create the data3 table.
         var data3 = new google.visualization.DataTable();
         data3.addColumn('string', 'Condition');
-        data3.addColumn('number', 'Percentage');
+        data3.addColumn('number', 'Rate');
         data3.addRows([
           ['COPD', 40.5],
           ['Asthma', 35.3],
@@ -91,6 +127,7 @@
 
         // Set chart options
         var options = {'width':1200,
+        	       'height':3000,
                        legend: { position: "none" },
                        };
                        
@@ -173,7 +210,7 @@
 
 
    <div class="row-fluid">
-        
+
           <ul class="nav nav-tabs">
   	    <li><a href="#item1" data-toggle="tab">Deaths</a></li>
 	    <li><a href="#item2" data-toggle="tab">Hospitalizations</a></li>
@@ -181,9 +218,12 @@
 	  </ul>
 	
 	  <div class="tab-content">
+
 	    <div class="tab-pane active" id="item1">
- 	      <!--Div that will hold the chart-->       
-              <div id="chart_div"></div>	  	
+	      <div class="main-pareto">	    
+ 	        <!--Div that will hold the chart-->       
+                <div id="chart_div"></div>
+              </div> 
 	    </div>
 	    <div class="tab-pane" id="item2">
  	      <!--Div that will hold the chart-->       
