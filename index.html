@@ -15,7 +15,18 @@
 }
 
 </style>
-<script> header('Access-Control-Allow-Origin: *'); </script>
+<script>
+var invocation = new XMLHttpRequest();
+var url = 'https://raw.github.com/andrewakagawa/myrepo/master/data.tsv';
+   
+function callOtherDomain() {
+  if(invocation) {    
+    invocation.open('GET', url, true);
+    invocation.onreadystatechange = handler;
+    invocation.send(); 
+  }
+}
+</script>
 
 </head>
 
