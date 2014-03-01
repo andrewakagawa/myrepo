@@ -1,156 +1,55 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <title>LiveWellSD</title>
-    <!-- Bootstrap -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
-	<script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
-
-  	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-  	<link rel="stylesheet" href="style.css">
-   	<link rel="stylesheet" href="bootstrap.min.css" >   
-  	<link rel="stylesheet" href="bootstrap-2.3.2.css">
-
-  </head>
-  <body>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="bootstrap.min.js"></script>
-
-<div class="navbar-wrapper">
-      <div class="container">
-	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <ul class="nav">
-		  <li>
-        <a href="index.html"><img class="logo" src="LWSD_CMYK_BT_H.png" /></a>
-      </li>
-  </ul>
-    <ul class="nav navbar-nav navbar-right">
-                <li>
-            <a href="SanDiegoCO.html">County-wide health data</a>
-          </li>
-        	    <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Explore your region's health  <b class="caret"></b></a>
-    <div class="dropdown-menu multi-column">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span3">
-            <ul class="dropdown-menu">
-              <li><a href="#">Alpine</a></li>
-              <li><a href="#">Anza-Borrego Springs</a></li>
-              <li><a href="#">Carlsbad</a></li>
-              <li><a href="#">Central SD</a></li>
-              <li><a href="chulavista.html">Chula Vista</a></li>
-              <li><a href="#">Coastal</a></li>
-              <li><a href="#">Coronado</a></li>
-              <li><a href="#">Del Mar-Mira Mesa</a></li>
-              <li><a href="#">El Cajon</a></li>
-              <li><a href="#">Elliott-Navajo</a></li>
-              <li><a href="#">Escondido</a></li>
-
-            </ul>
-          </div>
-          <div class="span3">
-            <ul class="dropdown-menu">
-             <li><a href="#">Fallbrook</a></li>
-              <li><a href="#">Harbison-Crest/El Cajon</a></li>
-              <li><a href="#">Jamul</a></li>
-              <li><a href="#">Kearny Mesa</a></li>
-              <li><a href="#">La Mesa</a></li>
-              <li><a href="#">Laguna-Pine Valley</a></li>
-              <li><a href="#">Lakeside</a></li>
-              <li><a href="#">Lemon Grove</a></li>
-              <li><a href="#">Mid-City</a></li>
-              <li><a href="#">Miramar</a></li>
-            </ul>
-          </div>
-          <div class="span3">
-            <ul class="dropdown-menu">
-              <li><a href="#">Mountain Empire</a></li>
-              <li><a href="#">National City</a></li>
-              <li><a href="#">North SD</a></li>
-              <li><a href="#">Oceanside</a></li>
-              <li><a href="#">Palomar-Julian</a></li>
-              <li><a href="#">Pauma</a></li>
-              <li><a href="#">Pendleton</a></li>
-              <li><a href="#">Peninsula</a></li>
-              <li><a href="#">Poway</a></li>
-              <li><a href="#">Ramona</a></li>
-          </ul>
-          </div>
-          <div class="span3">
-            <ul class="dropdown-menu">
-              <li><a href="#">San Dieguito</a></li>
-              <li><a href="#">San Marcos</a></li>
-              <li><a href="#">Santee</a></li>
-              <li><a href="#">South Bay</a></li>
-              <li><a href="#">Southeast SD</a></li>
-              <li><a href="#">Spring Valley</a></li>
-              <li><a href="#">Sweetwater</a></li>
-              <li><a href="#">University</a></li>
-              <li><a href="#">Valley Center</a></li>
-              <li><a href="#">Vista</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li>
-          	<a href="#map">Map comparisons</a>
-        	</li>
-   
- </ul>
-</ul>
-	</div>
-      </div>  </div>
-
-<div class="text-center">
-  <div class="container">
-  <h1>Using data for better health in San Diego</h1>
-  <p class="bkgdlead">3 - 4 - 50</p>
-  
-  <div class="col-lg-4">
-    <h2>3 behaviors</h2>
-    <img src="LWSDhomepageicons_behavioricon.png" />
-    <p>Poor diet - Physical inactivity - Smoking</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>4 chronic diseases</h2>
-    <img src="LWSDhomepageicons_diseaseicons.png" />
-    <p>Cancer - Heart disease/stroke - Asthma/COPD - Diabetes</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>50% of deaths</h2>
-    <img src="LWSDhomepageicons_deathicon.png" />
-    <p>Worldwide</p>
-  </div>
-</div>
-</div>
-
-<div class="lead intro well">
-<p>Chronic diseases are now the major cause of death and disability worldwide, having surpassed infectious diseases and injuries. Three behaviors contribute to four chronic diseases that cause over 50% of all deaths worldwide, a concept known as 3-4-50.</p>
-<p>In 2007 within San Diego County, the 3-4-50 diseases caused 57% of deaths and cost $4 billion in direct treatment.</p>
-<p>This website contains data made possible by the <a href="http://www.chcf.org/about">California Healthcare Foundation</a>,  <a href="http://www.chcf.org/projects/2012/free-the-data">CHCF's Free the Data Initiative</a>, <a href="http://www.sdcounty.ca.gov/hhsa/">San Diego County Health and Human Services Agency</a>, and <a href="http://www.livewellsd.org/">Live Well San Diego</a>. Visitors are welcome to explore the health of San Diego and all the regions within it.
-</div>
-
-
-
-
+<meta charset="utf-8">
+<style>
  
-<h2 id="map" class="text-center">Explore health data in San Diego</h2>
-<!--insert swipe map here-->
-
-<div class="text-center btn-cta">
-<a class="btn-lg btn-warning" href="SanDiegoCO.html" role="button">How does your region stack up?</a>
-</div>
-
-
-
-  
-
-</body></html>
+.chart rect {
+  fill: steelblue;
+}
+ 
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+ 
+</style>
+<svg class="chart"></svg>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+ 
+var width = 420,
+    barHeight = 20;
+ 
+var x = d3.scale.linear()
+    .range([0, width]);
+ 
+var chart = d3.select(".chart")
+    .attr("width", width);
+ 
+d3.tsv("data.tsv", type, function(error, data) {
+  x.domain([0, d3.max(data, function(d) { return d.value; })]);
+ 
+  chart.attr("height", barHeight * data.length);
+ 
+  var bar = chart.selectAll("g")
+      .data(data)
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+ 
+  bar.append("rect")
+      .attr("width", function(d) { return x(d.value); })
+      .attr("height", barHeight - 1);
+ 
+  bar.append("text")
+      .attr("x", function(d) { return x(d.value) - 3; })
+      .attr("y", barHeight / 2)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.value; });
+});
+ 
+function type(d) {
+  d.value = +d.value; // coerce to number
+  return d;
+}
+ 
+</script>
