@@ -1,181 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-
-      // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
-
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-
-  <body>
-
-
-<iframe src="/mbostock/raw/3885705/8784f05689d2970e0c0a8235a28f2604590794cd/" marginwidth="0" marginheight="0" scrolling="no">
 <html><head><meta charset="utf-8">
+<title>Sortable Bar Chart</title>
+<link rel="icon" href="/favicon.png">
 <style>
 
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: relative;
-  width: 960px;
+@import url("/style.css?20120730");
+
+header,
+footer {
+  color: #555;
 }
 
-.axis text {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.bar {
-  fill: steelblue;
-  fill-opacity: .9;
-}
-
-.x.axis path {
-  display: none;
-}
-
-label {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+a.gist {
+  color: #000;
 }
 
 </style>
-</head><body marginwidth="0" marginheight="0"><label><input type="checkbox"> Sort values</label>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+</head><body><header>
+  <a href="/mbostock">mbostock</a>’s block
+  <a class="gist" title="View gist #3885705 on GitHub" href="https://gist.github.com/mbostock/3885705">#3885705</a>
+  <span class="date">October 13, 2012</span>
+</header>
 
-var formatPercent = d3.format(".0%");
+<h1>Sortable Bar Chart</h1>
 
-var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1, 1);
 
-var y = d3.scale.linear()
-    .range([height, 0]);
+<iframe src="/mbostock/raw/3885705/8784f05689d2970e0c0a8235a28f2604590794cd/" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<p></p><aside><a style="position:relative;top:6px;" href="/mbostock/raw/3885705/" target="_blank">Open in a new window.</a></aside>
 
-var xAxis = d3.svg.axis()
+
+<div class="gist-readme"><p>This variation of a <a href="http://bl.ocks.org/3885304">simple bar chart</a> adds sorting with staggered delay and translucency to improve readability during the transition. This technique is recommended by <a href="http://vis.berkeley.edu/papers/animated_transitions/">Heer &amp; Robertson</a>. Use the checkbox in the top right to turn sorting on or off.</p></div>
+
+<div class="gist-sources"><div class="gist-source"><h2>index.html<a name="index.html" href="#index.html">#</a></h2><pre><code class="html xml"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+
+<span class="tag">body</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif</span>;</span>
+  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span>;</span>
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">960</span>px</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="class">.axis</span> <span class="tag">text</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font</span>:<span class="value"> <span class="number">10</span>px sans-serif</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="class">.axis</span> <span class="tag">path</span>,
+<span class="class">.axis</span> <span class="tag">line</span> <span class="rules">{
+  <span class="rule"><span class="attribute">fill</span>:<span class="value"> none</span>;</span>
+  <span class="rule"><span class="attribute">stroke</span>:<span class="value"> <span class="number">#000</span></span>;</span>
+  <span class="rule"><span class="attribute">shape-rendering</span>:<span class="value"> crispEdges</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="class">.bar</span> <span class="rules">{
+  <span class="rule"><span class="attribute">fill</span>:<span class="value"> steelblue</span>;</span>
+  <span class="rule"><span class="attribute">fill-opacity</span>:<span class="value"> .<span class="number">9</span></span>;</span>
+<span class="rule">}</span></span>
+
+<span class="class">.x</span><span class="class">.axis</span> <span class="tag">path</span> <span class="rules">{
+  <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span>;</span>
+<span class="rule">}</span></span>
+
+<span class="tag">label</span> <span class="rules">{
+  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span>;</span>
+  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">10</span>px</span>;</span>
+  <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">10</span>px</span>;</span>
+<span class="rule">}</span></span>
+
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;<span class="title">label</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span> Sort values<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+
+<span class="keyword">var</span> margin = {top: <span class="number">20</span>, right: <span class="number">20</span>, bottom: <span class="number">30</span>, left: <span class="number">40</span>},
+    width = <span class="number">960</span> - margin.left - margin.right,
+    height = <span class="number">500</span> - margin.top - margin.bottom;
+
+<span class="keyword">var</span> formatPercent = d3.format(<span class="string">".0%"</span>);
+
+<span class="keyword">var</span> x = d3.scale.ordinal()
+    .rangeRoundBands([<span class="number">0</span>, width], .<span class="number">1</span>, <span class="number">1</span>);
+
+<span class="keyword">var</span> y = d3.scale.linear()
+    .range([height, <span class="number">0</span>]);
+
+<span class="keyword">var</span> xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom");
+    .orient(<span class="string">"bottom"</span>);
 
-var yAxis = d3.svg.axis()
+<span class="keyword">var</span> yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left")
+    .orient(<span class="string">"left"</span>)
     .tickFormat(formatPercent);
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+<span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>).append(<span class="string">"svg"</span>)
+    .attr(<span class="string">"width"</span>, width + margin.left + margin.right)
+    .attr(<span class="string">"height"</span>, height + margin.top + margin.bottom)
+  .append(<span class="string">"g"</span>)
+    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + margin.left + <span class="string">","</span> + margin.top + <span class="string">")"</span>);
 
-d3.tsv("data.tsv", function(error, data) {
+d3.tsv(<span class="string">"data.tsv"</span>, <span class="function"><span class="keyword">function</span><span class="params">(error, data)</span> {</span>
 
-  data.forEach(function(d) {
+  data.forEach(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span>
     d.frequency = +d.frequency;
   });
 
-  x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+  x.domain(data.map(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.letter; }));
+  y.domain([<span class="number">0</span>, d3.max(data, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.frequency; })]);
 
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
+  svg.append(<span class="string">"g"</span>)
+      .attr(<span class="string">"class"</span>, <span class="string">"x axis"</span>)
+      .attr(<span class="string">"transform"</span>, <span class="string">"translate(0,"</span> + height + <span class="string">")"</span>)
       .call(xAxis);
 
-  svg.append("g")
-      .attr("class", "y axis")
+  svg.append(<span class="string">"g"</span>)
+      .attr(<span class="string">"class"</span>, <span class="string">"y axis"</span>)
       .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Frequency");
+    .append(<span class="string">"text"</span>)
+      .attr(<span class="string">"transform"</span>, <span class="string">"rotate(-90)"</span>)
+      .attr(<span class="string">"y"</span>, <span class="number">6</span>)
+      .attr(<span class="string">"dy"</span>, <span class="string">".71em"</span>)
+      .style(<span class="string">"text-anchor"</span>, <span class="string">"end"</span>)
+      .text(<span class="string">"Frequency"</span>);
 
-  svg.selectAll(".bar")
+  svg.selectAll(<span class="string">".bar"</span>)
       .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.letter); })
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
+    .enter().append(<span class="string">"rect"</span>)
+      .attr(<span class="string">"class"</span>, <span class="string">"bar"</span>)
+      .attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> x(d.letter); })
+      .attr(<span class="string">"width"</span>, x.rangeBand())
+      .attr(<span class="string">"y"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> y(d.frequency); })
+      .attr(<span class="string">"height"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> height - y(d.frequency); });
 
-  d3.select("input").on("change", change);
+  d3.select(<span class="string">"input"</span>).on(<span class="string">"change"</span>, change);
 
-  var sortTimeout = setTimeout(function() {
-    d3.select("input").property("checked", true).each(change);
-  }, 2000);
+  <span class="keyword">var</span> sortTimeout = setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    d3.select(<span class="string">"input"</span>).property(<span class="string">"checked"</span>, <span class="literal">true</span>).each(change);
+  }, <span class="number">2000</span>);
 
-  function change() {
+  <span class="function"><span class="keyword">function</span> <span class="title">change</span><span class="params">()</span> {</span>
     clearTimeout(sortTimeout);
 
-    // Copy-on-write since tweens are evaluated after a delay.
-    var x0 = x.domain(data.sort(this.checked
-        ? function(a, b) { return b.frequency - a.frequency; }
-        : function(a, b) { return d3.ascending(a.letter, b.letter); })
-        .map(function(d) { return d.letter; }))
+    <span class="comment">// Copy-on-write since tweens are evaluated after a delay.</span>
+    <span class="keyword">var</span> x0 = x.domain(data.sort(<span class="keyword">this</span>.checked
+        ? <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span> {</span> <span class="keyword">return</span> b.frequency - a.frequency; }
+        : <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span> {</span> <span class="keyword">return</span> d3.ascending(a.letter, b.letter); })
+        .map(<span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.letter; }))
         .copy();
 
-    var transition = svg.transition().duration(750),
-        delay = function(d, i) { return i * 50; };
+    <span class="keyword">var</span> transition = svg.transition().duration(<span class="number">750</span>),
+        delay = <span class="function"><span class="keyword">function</span><span class="params">(d, i)</span> {</span> <span class="keyword">return</span> i * <span class="number">50</span>; };
 
-    transition.selectAll(".bar")
+    transition.selectAll(<span class="string">".bar"</span>)
         .delay(delay)
-        .attr("x", function(d) { return x0(d.letter); });
+        .attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> x0(d.letter); });
 
-    transition.select(".x.axis")
+    transition.select(<span class="string">".x.axis"</span>)
         .call(xAxis)
-      .selectAll("g")
+      .selectAll(<span class="string">"g"</span>)
         .delay(delay);
   }
 });
+
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></pre></div><div class="gist-source"><h2>data.tsv<a name="data.tsv" href="#data.tsv">#</a></h2><pre><code class="undefined">letter	frequency
+A	.08167
+B	.01492
+C	.02780
+D	.04253
+E	.12702
+F	.02288
+G	.02022
+H	.06094
+I	.06973
+J	.00153
+K	.00747
+L	.04025
+M	.02517
+N	.06749
+O	.07507
+P	.01929
+Q	.00098
+R	.05987
+S	.06333
+T	.09056
+U	.02758
+V	.01037
+W	.02465
+X	.00150
+Y	.01971
+Z	.00074
+</code></pre></div></div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="/highlight.min.js?20120730"></script>
+<script>
+
+var gist = {"history":[{"version":"8784f05689d2970e0c0a8235a28f2604590794cd"}],"files":{"README.md":{"language":"Markdown","type":"text/plain","filename":"README.md","size":331,"sha":"2cdd14341d362f68770d5ffc2059f099b979f46b"},"data.tsv":{"language":null,"type":"text/tab-separated-values","filename":"data.tsv","size":251,"sha":"a65a161184a87b69fdabc3b4a952e5ac9c71b054"},"index.html":{"language":"HTML","type":"text/html","filename":"index.html","size":3052,"sha":"847b543f8ab1221361a16b192428b23a9d865d01"},"thumbnail.png":{"language":null,"type":"image/png","filename":"thumbnail.png","size":4850,"sha":"6e9131d97a75c0a3564a5e0f718ee09921a25826"}},"created_at":"2012-10-13T18:40:20.000Z","updated_at":"2014-02-22T14:11:42.000Z","description":"Sortable Bar Chart","user":{"login":"mbostock"},"id":"3885705"};
+
+var files = d3.values(gist.files)
+    .sort(function(a, b) { return (b.filename === "index.html") - (a.filename === "index.html") || a.filename.localeCompare(b.filename); });
+
+var readme = d3.selectAll(".gist-readme")
+    .data(files.filter(function(d) { return /^readme\b/i.test(d.filename) && d.language === "Markdown"; }))
+    .each(function(d) {
+      var readme = d3.select(this);
+      d3.text("/mbostock/raw/3885705/8784f05689d2970e0c0a8235a28f2604590794cd/" + d.filename, function(error, content) {
+        readme.html(new Showdown.converter().makeHtml(content));
+        readme.selectAll("code").each(function() { hljs.highlightBlock(this); });
+      });
+    });
+
+var source = d3.select(".gist-sources").selectAll(".gist-source")
+    .data(files.filter(function(d) { return !/^readme\b/i.test(d.filename) && d.size < 50000 && text(d.type); }))
+  .enter().append("div")
+    .attr("class", "gist-source");
+
+source.append("h2")
+    .text(function(d) { return d.filename; })
+  .append("a")
+    .attr("name", function(d) { return d.filename; })
+    .attr("href", function(d) { return "#" + d.filename; })
+    .text("#");
+
+source.append("pre").append("code")
+    .attr("class", function(d) { return d.language && (d.language === "JSON" ? "javascript" : d.language.toLowerCase()); })
+    .each(function(d) {
+      var code = d3.select(this);
+      d3.text("/mbostock/raw/3885705/8784f05689d2970e0c0a8235a28f2604590794cd/" + (d.filename === "index.html" ? "" : d.filename), function(error, content) {
+        code.text(content);
+        hljs.highlightBlock(code.node());
+      });
+    });
+
+function text(type) {
+  return /(^text\/)|(^application\/(javascript|json)$)|(^image\/svg$)|(\+xml$)/.test(type);
+}
+
 </script>
-</html>
-</iframe>
-  </body>
-</html>
+
+<footer>
+  <a href="/mbostock">mbostock</a>’s block
+  <a class="gist" title="View gist #3885705 on GitHub" href="https://gist.github.com/mbostock/3885705">#3885705</a>
+  <span class="date">October 13, 2012</span>
+</footer>
+
+<script>
+
+GoogleAnalyticsObject = "ga", ga = function() { ga.q.push(arguments); }, ga.q = [], ga.l = +new Date;
+ga("create", "UA-48272912-1", "ocks.org");
+ga("send", "pageview");
+
+</script>
+<script async="" src="//www.google-analytics.com/analytics.js"></script>
+</body></html>
