@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>San Diego County Health Data</title>
+    
+    <!-- Bootstrap -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+	<script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+
+  	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  	<link rel="stylesheet" href="style.css">
+   	<link rel="stylesheet" href="bootstrap.min.css" >   
+  	<link rel="stylesheet" href="bootstrap-2.3.2.css">
+  	
+  	
+  	<!--Load the AJAX API-->
+    	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    	<script type="text/javascript">
+
+      	// Load the Visualization API and the piechart package.
+      	google.load('visualization', '1.0', {'packages':['corechart']});
+
+	// Set a callback to run when the Google Visualization API is loaded.
+	google.setOnLoadCallback(drawChart);
+
+
+	// Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+	// Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Condition');
+        data.addColumn('number', 'Rate');
+        data.addRows([
+	['Anza-Borrego Springs',	792.8],
+	['La Mesa',	631.8],
+	['Chula Vista',	564.2],
+	['El Cajon**',	539.2],
+	['Fallbrook',	432.4],
+	['Kearny Mesa',	423.9],
+	['National City',	401.8],
+	['Coronado',	390.1],
+	['Coastal',	389.1],
+	['North SD',	387.5],
+	['Jamul',	386.8],
+	['Escondido',	384.2],
+	['Oceanside',	384.1],
+	['Santee',	375.3],
+	['Vista',	375.0],
+	['El Cajon',	372.0],
+	['San Marcos',	371.4],
+	['Mountain Empire',	364.4],
+	['Lemon Grove',	360.6],
+	['Elliott-Navajo',	354.5],
+	['San Diego County',	347.0],
+	['Ramona',	335.8],
+	['Lakeside',	335.3],
+	['Alpine',	329.8],
+	['Carlsbad',	323.7],
+	['South Bay',	321.2],
+	['Southeast SD',	319.7],
+	['San Dieguito',	318.2],
+	['Central SD',	305.5],
+	['Mid-City',	291.1],
+	['Spring Valley',	286.3],
+	['Valley Center',	285.6],
+	['Peninsula',	279.1],
+	['Poway',	250.9],
+	['University',	231.6],
+	['Pauma',	193.0],
+	['Palomar-Julian',	186.7],
+	['Del Mar-Mira Mesa',	186.1],
+	['Sweetwater',	134.7],
+	['Laguna-Pine Valley',	106.3],
+	['Miramar',	0.0],
+	['Pendleton',	0.0]
+        ]);
+        
+	// Create the data2 table.
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Condition');
+        data2.addColumn('number', 'Rate');
+        data2.addRows([
+	['National City',	1458.3],
+	['Chula Vista',	1395.9],
+	['Anza-Borrego Springs',	1392.8],
+	['El Cajon**',	1377.5],
+	['La Mesa',	1275.3],
+	['Mountain Empire',	1269.7],
+	['Alpine',	1180.8],
+	['South Bay',	1059.0],
+	['Southeast SD',	1056.2],
+	['Fallbrook',	1034.0],
+	['Santee',	965.3],
+	['Jamul',	961.4],
+	['Lemon Grove',	938.3],
+	['Central SD',	930.9],
+	['Oceanside',	905.7],
+	['El Cajon',	902.9],
+	['Vista',	827.0],
+	['Kearny Mesa',	821.4],
+	['Mid-City',	820.5],
+	['San Diego County',	812.8],
+	['Lakeside',	805.5],
+	['Escondido',	780.6],
+	['Ramona',	725.3],
+	['Elliott-Navajo',	723.5],
+	['Spring Valley',	703.5],
+	['North SD',	702.5],
+	['San Marcos',	684.1],
+	['Coastal',	661.8],
+	['Coronado',	660.1],
+	['Pauma',	630.4],
+	['Carlsbad',	598.2],
+	['Valley Center',	571.2],
+	['San Dieguito',	570.1],
+	['Poway',	502.9],
+	['Laguna-Pine Valley',	460.7],
+	['Del Mar-Mira Mesa',	426.5],
+	['Sweetwater',	396.8],
+	['Peninsula',	393.3],
+	['University',	350.5],
+	['Palomar-Julian',	342.3],
+	['Miramar',	0.0],
+	['Pendleton',	0.0],
+
+        ]);       
+        
+	// Create the data3 table.
+        var data3 = new google.visualization.DataTable();
+        data3.addColumn('string', 'Condition');
+        data3.addColumn('number', 'Rate');
+        data3.addRows([
+	['Chula Vista',	1833.3],
+	['National City',	1454.9],
+	['Southeast SD',	1446.9],
+	['South Bay',	1204.8],
+	['Central SD',	1132.2],
+	['El Cajon**',	1086.2],
+	['La Mesa',	995.2],
+	['Vista',	979.0],
+	['Mid-City',	966.9],
+	['Lemon Grove',	944.9],
+	['Oceanside',	914.5],
+	['Jamul',	898.9],
+	['Escondido',	872.6],
+	['Mountain Empire',	870.0],
+	['Spring Valley',	839.3],
+	['Kearny Mesa',	804.2],
+	['San Diego County',	802.4],
+	['Fallbrook',	754.1],
+	['Alpine',	719.0],
+	['Ramona',	708.4],
+	['El Cajon',	695.3],
+	['Santee',	680.9],
+	['Lakeside',	660.0],
+	['Anza-Borrego Springs',	578.5],
+	['North SD',	565.0],
+	['San Marcos',	547.7],
+	['Elliott-Navajo',	477.5],
+	['Valley Center',	473.2],
+	['Coronado',	424.4],
+	['Poway',	416.6],
+	['San Dieguito',	398.3],
+	['Coastal',	391.8],
+	['Pauma',	386.0],
+	['Peninsula',	355.2],
+	['Sweetwater',	327.2],
+	['University',	306.8],
+	['Del Mar-Mira Mesa',	298.5],
+	['Palomar-Julian',	280.0],
+	['Carlsbad',	268.4],
+	['Laguna-Pine Valley',	124.0],
+	['Miramar',	0.0],
+	['Pendleton',	0.0]
+        ]);   
+        
+        var data4 = google.visualization.arrayToDataTable([
+          ['Year', 'Death Rate', 'Hospital Rate', 'Emergency Rate'],
+          ['2010',    347.0,  864.9,  782.8],
+          ['2011',  347.0,  812.8,  802.4]
+        ]);
+
+
+        // Set chart options
+        var options = {'width':1200,
+        	       'height':3000,
+                       legend: { position: "none" },
+                       };
+                       
+        // Set chart options2
+        var options2 = {'width':1200,
+        	       'height':3000,
+                       legend: { position: "none" },
+                       };
+
+        // Set chart options3
+        var options3 = {'width':1200,
+        	       'height':3000,
+                       legend: { position: "none" },
+                       };
+                       
+        // Set chart options4
+        var options4 = {'width':1200,
+                       'height':400
+                       };
+                       
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        
+        function selectHandler() {
+          var selectedItem = chart.getSelection()[0];
+          if (selectedItem) {
+            var region = data.getValue(selectedItem.row, 0);
+                 if (region == 'Chula Vista'){ 
+                   window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+                 }
+                 else {
+                   alert('Will provide ' + region + ' data with funding ;)  For now check out the Chula Vista demo by clicking that region')	
+                 }
+          }
+        }
+        
+        google.visualization.events.addListener(chart, 'select', selectHandler);    
+
+
+        
+        // Instantiate and draw our chart, passing in some options.
+        var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
+        chart2.draw(data2, options2);      
+        
+        function selectHandler2() {
+          var selectedItem2 = chart2.getSelection()[0];
+          if (selectedItem2) {
+            	var region = data2.getValue(selectedItem2.row, 0);
+                 if (region == 'Chula Vista'){ 
+                   window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+                 }
+                 else {
+                   alert('Will provide ' + region + ' data with funding ;)  For now check out the Chula Vista demo by clicking that region')	
+                 }
+          }
+        }
+        
+        google.visualization.events.addListener(chart2, 'select', selectHandler2);    
+
+
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart3 = new google.visualization.BarChart(document.getElementById('chart_div3'));
+        chart3.draw(data3, options3);   
+        
+        function selectHandler3() {
+          var selectedItem3 = chart3.getSelection()[0];
+          if (selectedItem3) {
+            	var region = data3.getValue(selectedItem3.row, 0);
+                 if (region == 'Chula Vista'){ 
+                   window.location.assign('https://rawgithub.com/AnitaYCheng/myrepo/master/chulavista.html');
+                 }
+                 else {
+                   alert('Will provide ' + region + ' data with funding ;)  For now check out the Chula Vista demo by clicking that region')	
+                 }
+          }
+        }
+        
+        google.visualization.events.addListener(chart3, 'select', selectHandler3);    
+
+ 
+        // Instantiate and draw our chart, passing in some options.      
+        var chart4 = new google.visualization.LineChart(document.getElementById('chart_div4'));
+        chart4.draw(data4, options4);
+
+        // Instantiate and draw our chart, passing in some options.      
+        var chart5 = new google.visualization.LineChart(document.getElementById('chart_div5'));
+        chart5.draw(data5, options5);
+
+        // Instantiate and draw our chart, passing in some options.      
+        var chart6 = new google.visualization.LineChart(document.getElementById('chart_div6'));
+        chart6.draw(data6, options6);
+      }
+    </script>
+
+  </head>
+  <body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+<div class="navbar-wrapper">
+      <div class="container">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul class="nav">
+      <li>
+        <a href="index.html"><img class="logo" src="LWSD_CMYK_BT_H.png" /></a>
+      </li>
+  </ul>
+    <ul class="nav navbar-nav navbar-right">
+                <li>
+            <a href="SanDiegoCO.html">County-wide health data</a>
+          </li>
+              <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Explore your region's health  <b class="caret"></b></a>
+    <div class="dropdown-menu multi-column">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">Alpine</a></li>
+              <li><a href="#">Anza-Borrego Springs</a></li>
+              <li><a href="#">Carlsbad</a></li>
+              <li><a href="#">Central SD</a></li>
+              <li><a href="chulavista.html">Chula Vista</a></li>
+              <li><a href="#">Coastal</a></li>
+              <li><a href="#">Coronado</a></li>
+              <li><a href="#">Del Mar-Mira Mesa</a></li>
+              <li><a href="#">El Cajon</a></li>
+              <li><a href="#">Elliott-Navajo</a></li>
+              <li><a href="#">Escondido</a></li>
+            </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+             <li><a href="#">Fallbrook</a></li>
+              <li><a href="#">Harbison-Crest/El Cajon</a></li>
+              <li><a href="#">Jamul</a></li>
+              <li><a href="#">Kearny Mesa</a></li>
+              <li><a href="#">La Mesa</a></li>
+              <li><a href="#">Laguna-Pine Valley</a></li>
+              <li><a href="#">Lakeside</a></li>
+              <li><a href="#">Lemon Grove</a></li>
+              <li><a href="#">Mid-City</a></li>
+              <li><a href="#">Miramar</a></li>
+            </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">Mountain Empire</a></li>
+              <li><a href="#">National City</a></li>
+              <li><a href="#">North SD</a></li>
+              <li><a href="#">Oceanside</a></li>
+              <li><a href="#">Palomar-Julian</a></li>
+              <li><a href="#">Pauma</a></li>
+              <li><a href="#">Pendleton</a></li>
+              <li><a href="#">Peninsula</a></li>
+              <li><a href="#">Poway</a></li>
+              <li><a href="#">Ramona</a></li>
+          </ul>
+          </div>
+          <div class="span3">
+            <ul class="dropdown-menu">
+              <li><a href="#">San Dieguito</a></li>
+              <li><a href="#">San Marcos</a></li>
+              <li><a href="#">Santee</a></li>
+              <li><a href="#">South Bay</a></li>
+              <li><a href="#">Southeast SD</a></li>
+              <li><a href="#">Spring Valley</a></li>
+              <li><a href="#">Sweetwater</a></li>
+              <li><a href="#">University</a></li>
+              <li><a href="#">Valley Center</a></li>
+              <li><a href="#">Vista</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+          <li>
+          	<a href="index.html#map">Map comparisons</a>
+        	</li>
+   
+ </ul>
+</ul>
+	</div>
+      </div>  </div>
+
+      
+
+<div class="container">
+
+   <div class="row-fluid">
+       <h1>San Diego County Health Data (from 2011)</h1>
+          <ul class="nav nav-tabs data-tabs-main">
+  	    <li><a href="#item1" data-toggle="tab">Deaths</a></li>
+	    <li><a href="#item2" data-toggle="tab">Hospitalizations</a></li>
+    	    <li><a href="#item3" data-toggle="tab">Emergency</a></li>
+	  </ul>
+
+	  <div class="tab-content">
+
+	    <div class="tab-pane active" id="item1">
+	      <div class="main-pareto">	    
+ 	        <!--Div that will hold the chart-->       
+                <div id="chart_div"></div>
+              </div> 
+	    </div>
+	    <div class="tab-pane" id="item2">
+	      <div class="main-pareto">	 	    
+ 	       <!--Div that will hold the chart-->       
+               <div id="chart_div2"></div>
+              </div>
+	    </div>
+	    <div class="tab-pane" id="item3">
+	      <div class="main-pareto">	 	    
+ 	       <!--Div that will hold the chart-->       
+               <div id="chart_div3"></div>
+              </div>
+	    </div>
+	  </div>
+
+    </div>
+
+      <div class="row-fluid">
+  	<h1>San Diego County health data over time</h1>      
+       	        <!--Div that will hold the chart-->       
+                <div id="chart_div4" style="width: 480px; height: 300px;"></div>
+      </div>
+
+</body>
+
+</html>
