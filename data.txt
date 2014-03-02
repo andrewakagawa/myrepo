@@ -1,0 +1,43 @@
+SRA	deathrate
+Alpine	329.8
+Anza-Borrego Springs	792.8
+Carlsbad	323.7
+Central SD	305.5
+Chula Vista	564.2
+Coastal	389.1
+Coronado	390.1
+Del Mar-Mira Mesa	186.1
+El Cajon	372
+Elliott-Navajo	354.5
+Escondido	384.2
+Fallbrook	432.4
+Harbison Crest/El Cajon**	539.2
+Jamul	386.8
+Kearny Mesa	423.9
+La Mesa	631.8
+Laguna-Pine Valley	106.3
+Lakeside	335.3
+Lemon Grove	360.6
+Mid-City	291.1
+Miramar	0
+Mountain Empire	364.4
+National City	401.8
+North SD	387.5
+Oceanside	384.1
+Palomar-Julian	186.7
+Pauma	193
+Pendleton	0
+Peninsula	279.1
+Poway	250.9
+Ramona	335.8
+San Diego County	347
+San Dieguito	318.2
+San Marcos	371.4
+Santee	375.3
+South Bay	321.2
+Southeast SD	319.7
+Spring Valley	286.3
+Sweetwater	134.7
+University	231.6
+Valley Center	285.6
+Vista	375
