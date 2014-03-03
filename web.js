@@ -6,8 +6,11 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
     buf=fs.readFileSync('index.html');
-    buf=fs.readFileSync('SDCO.html');
     response.send(buf.toString('utf8', 0, buf.length));
+});
+
+app.get('/', function(request, response) {
+    res.render('SDCO.html');
 });
 
 var port = process.env.PORT || 8080;
