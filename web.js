@@ -10,8 +10,10 @@ app.get('/', function(request, response) {
 });
 
 app.get('/', function(request, response) {
-    response.render('SDCO.html');
+    buf=fs.readFileSync('SDCO.html');
+    response.send(buf.toString('utf8', 0, buf.length));
 });
+
 
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
