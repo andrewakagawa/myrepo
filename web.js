@@ -10,7 +10,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/', function(request, response) {
-    res.render('SDCO.html');
+    response.render('SDCO.html');
 });
 
 var port = process.env.PORT || 8080;
